@@ -4,7 +4,7 @@ You will need to install the imported packages (refer to lecture 2 slides).
 You may also install it directly from here.
 """
 
-# Package nd to connect to PostgreSQL
+# Package to connect to PostgreSQL
 import psycopg2
 
 # import psycopg2-binary
