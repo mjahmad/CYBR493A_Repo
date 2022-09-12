@@ -8,9 +8,9 @@ number1 = 0
 # declare second variable with initial value 6
 number2 = 0
 
-number1 = input("What is the value of the first value? ")
+number1 = int(input("What is the value of the first value? "))
 
-number2 = input("What is the value of the second value? ")
+number2 = int(input("What is the value of the second value? "))
 
 # print the sum of the values
 print("The sum of the two provided values {0}".format(number1),"and {0}".format(number2)," is {0}".format(number1+number2))
