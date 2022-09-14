@@ -4,7 +4,6 @@ This program calculates different things related to circles
 # Import the library mth, we need it to obtain the value of PI
 import math
 
-
 def CircleArea(diameter):
     """
     This method calculates the area of a circle, given the circle's diameter
