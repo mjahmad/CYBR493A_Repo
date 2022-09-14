@@ -24,6 +24,7 @@ def ShowCircleArea():
     This method calculates the area of a circle, by asking use for a diameter
     :return: N/A
     """
+
     diameter = float(input("What is the diameter of the cirlce?"))
     # The area is radius (square) * pie
     # Let us calculate radius:
