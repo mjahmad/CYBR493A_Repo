@@ -2,7 +2,7 @@
 This is the main screen for Homework #2. Do not make any changes to this file.
 """
 # import the necessary files
-import HW2
+from Homeworks import HW2
 
 
 def main():
