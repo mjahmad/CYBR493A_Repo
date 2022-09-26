@@ -2,7 +2,26 @@
 Examples for for loops in python
 """
 import maskpass
+import matplotlib
+
 #
+
+
+# Here is a game, it asks user for a word, then keeps asking the user for the provided word in reverse, it will only
+# stop if the user provides the correct reversed word. before you run this part, go to Run-> Edit Configurations ->
+# Under Execution, enable Emulate terminal in output console Ask user for input
+passwordInput = maskpass.askpass(prompt="Hello user, give me a password:", mask="*")
+guess = False
+while guess is False:
+    passwordGuess = input("Ok, what is the reversed password? I will keep asking until you provide the correct answer: ")
+    if (''.join(reversed(passwordGuess))) == passwordInput:
+        guess = True
+        print("You got it!")
+
+
+
+
+
 # # print a given string 10 times
 #
 # # Here we are saying, as long as n is the range of 10 (less than 10)
@@ -41,13 +60,4 @@ dataFileLocation= "./data.txt"
 # for line in allText:
 #     print(line)
 
-# Here is a game, it asks user for a word, then keeps asking the user for the provided word in reverse, it will oonly stop if the user provides the correct reversed word.
-# before you run this part, go to Run-> Edit Configurations -> Under Execution, enable Emulate terminal in output console
-#Ask user for input
-# passwordInput = maskpass.askpass(prompt="Hello user, give me a password:", mask="*")
-# guess = False
-# while guess is False:
-#     passwordGuess = input("Ok, what is the reversed password? I will keep asking until you provide the correct answer: ")
-#     if (''.join(reversed(passwordGuess))) == passwordInput:
-#         guess = True
-#         print("You got it!")
+

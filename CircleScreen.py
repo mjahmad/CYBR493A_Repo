@@ -18,6 +18,6 @@ def main():
     print("The area of a circle of {0}".format(theDiameter), " is {0}".format(theArea))
 
     # Call the method which shows the area
-    CircleProgram.ShowCircleArea()
+    #CircleProgram.ShowCircleArea()
 if __name__ == "__main__":
     main()
