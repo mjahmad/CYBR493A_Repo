@@ -17,7 +17,7 @@ def main():
     # Ask user which program to run
     response = int(input(
         "Which program do you want to run? (1) Password Checker, (2) Simple Calculator, (3) Fancy Calculator \n "
-        "Provide a number or a name"))
+        " (4) Explain why a password is valid/ not valid. Provide a number or a name"))
 
     # If statement to determine which program to call based on user input
 
@@ -32,6 +32,10 @@ def main():
         In_Class_Practices.SimpleCalculator.SimpleCalculator()
     elif response == 3 or response == "Fancy Calculator":
         In_Class_Practices.FancyCalculator.FancyCalculator()
+    elif response == 4 or response == "Password Checker (with explaination) ":
+        password = (input("Please enter a password: "))
+
+        Homework1.ExplainCorrectPasswordResponse(password)
 
 
 # Required to run main method

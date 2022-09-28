@@ -27,3 +27,25 @@ def CorrectPasswordResponse(password):
         return False
     # Return True if all IF statements fail (do not return anything)
     return True
+
+
+def ExplainCorrectPasswordResponse(password):
+    """
+    This method tests whether a password ia valis and prints out why/ why not.
+    :param password: Passed data from Main
+    :return: N/A
+    """
+    # Define a list of symbols
+    symbols = ['!', '@', '#', '$', '%']
+
+    if len(password) < 8:
+        print("Password has to be 8 chars long")
+
+    elif not any(char.isdigit() for char in password):
+        print("Password has to include at least one number")
+
+    elif not any(char in symbols for char in password):
+        print("Password has to include one symbol")
+    else:
+        print("Valid Password")
+
