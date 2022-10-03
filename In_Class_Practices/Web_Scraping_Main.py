@@ -1,4 +1,4 @@
-import Web_Scrapping as wb
+import Web_Scraping as wb
 
 def main():
     """
