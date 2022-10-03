@@ -1,3 +1,4 @@
+
 """
 Python file for HW #2. Password checker
 This file has some methods which validate different criteria of a given password.
