@@ -14,10 +14,13 @@ def main():
     print(uni_name)
     # Let us see how many divs are they under this section
     all_divs = main_tree.xpath('//*[@id="wvu-main"]/div')
+    # This will display the number of sections
     print(str(len(all_divs)))
     # Interact with the first div
     first_div = all_divs[0]
+    # This will get the number of sections (divs) under the first div.
     print(str(len(first_div)))
+    # This will extract the FIND YOUR VIBE statement from the website.
     find_your_vibe = main_tree.xpath('//*[@id="wvu-main"]/div[1]/div[1]/div/h2/span/text()')
     print(find_your_vibe)
 
