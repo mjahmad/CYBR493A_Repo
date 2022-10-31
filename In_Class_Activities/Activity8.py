@@ -1,5 +1,5 @@
 """
-Activyt #8 solution
+Activity #8 solution
 Get bug ids and bug packages from each page
 """
 
@@ -30,11 +30,15 @@ def main():
     bug_list = main_tree.xpath('//*[@class="bugnumber"]//text()')
     # Get rid of # in each bug id, and return the clean list
     bug_list=  [ele.replace('#', '') for ele in bug_list]
+    print(str(len(bug_list)))
     print(bug_list)
+
     bug_package = main_tree.xpath('//*[@class="buginfo-extra"]/span/text()')
     # cleanup package names and only include elements which are not empty.
+    #print(bug_package)
     bug_package = [ele for ele in ([ele.strip() for ele in bug_package]) if ele != '']
     print(bug_package)
+    print(str(len(bug_package)))
 
 
 if __name__ == "__main__":
