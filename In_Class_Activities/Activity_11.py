@@ -24,7 +24,7 @@ def main():
            ".affects_me.used=&field.has_no_package.used=&field.has_patch.used=&field.has_branches.used=&field" \
            ".has_branches=on&field.has_no_branches.used=&field.has_no_branches=on&field.has_blueprints.used=&field" \
            ".has_blueprints=on&field.has_no_blueprints.used=&field.has_no_blueprints=on&search=Search&orderby" \
-           "=-importance&memo=75&start=0 "
+           "=-importance&memo=75&start=0"
 
     main_tree = wb.get_web_tree(link)
 
@@ -40,22 +40,36 @@ def main():
     bug_package = [ele for ele in ([ele.strip() for ele in bug_package]) if ele != '']
     print(bug_package)
     print(str(len(bug_package)))
-    # Write your code here
-    # 1. Create one DB table named [YourName]_Ubuntu, with two fields as varchar bug_id and bug_package
-    # 2. Iterate through bug id's and bug packages and insert bug_id and package name to the table
-    # 3. Test whether table has been created and has data using SQL: SELECT * FROM [Table_Name].
-    # 4. Drop the table from the DB.
-
     # Connects you to your DB
     my_db = MyDB()
+    # Write your code here
+    # 1. Create one DB table named [YourName]_Ubuntu, with two fields as varchar bug_id and bug_package
     # This is how you write SQL statement to your DB
-    my_db.query('WRITE SQL STATEMENT HERE, such as CREATE and DROP tables', '');
+    my_db.query('CREATE TABLE MJ_UBUNTU (bug_id varchar, bug_package varchar);', '');
 
-    # If you need to add data to a table, use this where each %s is a data element.
-    command = 'INSERT INTO [Table_Name] VALUES(%s)' #Assuming we have a table with one column only
+    # 2. Iterate through bug id's and bug packages and insert bug_id and package name to the table
+    counter = 0
+    while counter < len(bug_list):
+        # If you need to add data to a table, use this where each %s is a data element.
+        command = 'INSERT INTO MJ_UBUNTU VALUES(%s,%s)'  # Assuming we have a table with one column only
 
-    # Execute teh query, notice the extra , after the data
-    my_db.query(command, ("CC",))
+        # Execute teh query, notice the extra , after the data
+        my_db.query(command, (bug_list[counter],bug_package[counter] ,))
+        counter = counter + 1
+
+    # 3. Test whether table has been created and has data using SQL: SELECT * FROM [Table_Name].
+
+    dataCheck = my_db.query('SELECT * FROM MJ_UBUNTU;', '');
+    print(dataCheck)
+
+    # 4. Drop the table from the DB.
+    my_db.query('DROP TABLE MJ_UBUNTU;', '');
+    #dataCheck = my_db.query('SELECT * FROM MJ_UBUNTU;', '');
+    #print(dataCheck)
+
+
+
+
 
 class MyDB(object):
     _db_connection = None
