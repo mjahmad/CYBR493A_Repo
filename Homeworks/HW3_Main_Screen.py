@@ -22,7 +22,7 @@ link = link = "https://bugs.launchpad.net/ubuntu/+bugs?field.searchtext=&field.s
 
 # Get links to all bug pages of Ubuntu Vulnerabilities
 # Also Global
-bugsLinks_list = HW3.Generate_Links_For_All_Bugs_Pages(link)
+bugsLinks_list = HW3org.Generate_Links_For_All_Bugs_Pages(link)
 
 
 def main():
@@ -31,8 +31,8 @@ def main():
     :return:N/A
     """
     # Display initial info
-    bugsTotal = HW3.GetTotalNumberOfBugs(link)
-    pagesTotal = HW3.GetTotalNumberOfPages(link)
+    bugsTotal = HW3org.GetTotalNumberOfBugs(link)
+    pagesTotal = HW3org.GetTotalNumberOfPages(link)
     print('Welcome! Infor about this Vulnerabilities DB')
     print('Initial Link:\n' + link)
     print('Total Number of Bugs:\t', bugsTotal)
@@ -44,8 +44,8 @@ def main():
     # Get data for user's input page
     print('Page # ', page_input, ' information:\t')
     print('Page Link:\t' + bugsLinks_list[page_input])
-    print('List of Bugs\t', HW3.GetBugIDs(bugsLinks_list[page_input]))
-    print('List of Packages\t', HW3.GetBugPackages(bugsLinks_list[page_input]))
+    print('List of Bugs\t', HW3org.GetBugIDs(bugsLinks_list[page_input]))
+    print('List of Packages\t', HW3org.GetBugPackages(bugsLinks_list[page_input]))
 
 
 if __name__ == "__main__":
