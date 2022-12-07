@@ -144,14 +144,18 @@ def main():
     :return:
     """
     # Create the table and add data. Run only once then comment out.
-
     # CreateTablesAndFillData()
+
+    # Un-comment the next two lines in you want to accept data from user
     # user = input("Enter User Name:")
     # password = input("EnterPassword:")
 
+    # Alternatively, you can use set values of variables in the next two lines.
     user = "User1"
-    password = "Pass1'"
-    # password = "Padss1' or True"
+    password = "Pass1"
+
+
+
     print('%%%%%%%%%%%%%%%%%%%%%%%%%% Check user and password %%%%%%%%%%%%%%%%%%%%%%%%%%%')
     print("Method 1: User and password exist/ match:\t", UserExist_Method1(user, password))
 
