@@ -1,7 +1,6 @@
 """
 Activity #12
 """
-import HW3
 # import the necessary files
 from In_Class_Practices import Web_Scraping as wb
 from Homeworks import HW3org
